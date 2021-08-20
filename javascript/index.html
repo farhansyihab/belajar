@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        code {
+            padding: 40px;
+            display:block;
+            background-color: #EFEFEF;
+        }
+    </style>
     <title>Belajar JavaScript</title>
 </head>
 <body>
@@ -20,5 +27,75 @@
             <li><a href="createobject/index.html#proto">Prototype</a></li>
         </ul>
     </div>
+    <div id="scope">
+        <ul>
+            <li>
+                <h2>Execution Context, Hoisting & Scope</h2>
+                <p>Untuk pembahasan ini silahkan buka <a href="http://pythontutor.com/javascript.html#mode=edit">JavaScript Visualizer</a></p>
+                <p>masukkan code dibawah ini dan lihat step-step eksekusinya</p>
+                <p>
+                    <pre>
+                        <code id="executioncontext">
+                            function a(){
+                                console.log('ini adalah function a()');
+                                var nama = 'Farhan';
+                                var umur = 48;
+                                console.log(sayHello());
+                                function sayHello() {
+                                    return `Hallo nama saya ${nama}, umur saya ${umur} tahun`;
+                                }
+                            
+                                function b(){
+                                    console.log('ini adalah function b()');
+                            
+                                    function c() {
+                                        console.log('ini adalah function c()');
+                                    }
+                                    c();
+                                }
+                                b();
+                            }
+                            a();
+                        </code>
+                    </pre>
+                </p>
+            </li>
+            <li>
+                <h2>Closure</h2>
+                <p>Closure merupakan kombinasi antara function dan lingkungan leksikal (lexical scope) di dalam function tersebut</p>
+                <p>Closure adalah sebuah function ketika memiliki akses ke parent scope-nya, meskipun parent scopenya sudah selesai dieksekusi</p>
+                <p>Closure adalah sebuah function yang sebelumnya sudah memiliki data, hasil dari function yang lain</p>
+                <p>Contoh Closure:
+                    <pre>
+                        <code>
+                            function ucapkanSalam(waktu) {
+                                return function(nama) {
+                                    console.log(`Halo ${nama}, selamat ${waktu}, semoga harimu menyenangkan`);
+                                }
+                            }
+                            
+                            const selamatPagi = ucapkanSalam('pagi');
+                            const selamatSiang = ucapkanSalam('siang');
+                            const selamatMalam = ucapkanSalam('malam');
+                            
+                            selamatPagi('Farhan');
+                        </code>
+                    </pre>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div id="function">
+        <h2>Function</h2>
+        <ul>
+            <li><a href="function/index.html#declaration">Declaration Function</a></li>
+            <li><a href="function/index.html#expression">Function Expression</a></li>
+            <li><a href="function/index.html#constructor">Constructor Function</a></li>
+            <li><a href="function/index.html#class">Class</a></li>
+            <li><a href="function/index.html#objcreate">Object Create</a></li>
+            <li><a href="function/index.html#proto">Prototype</a></li>
+        </ul>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>

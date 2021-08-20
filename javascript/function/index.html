@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        code {
+            padding: 40px;
+            display:block;
+            background-color: #EFEFEF;
+        }
+    </style>
+    <title>Belajar Function</title>
+</head>
+<body>
+    <h1>Belajar Function</h1>
+    <div id="declaration">
+        <h2>Function Declaration</h2>
+        <p>Deklarasinya seperti kebanyakan pembuatan function pada setiap bahasa pemograman, <b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    function tampilPesan(nama) {
+                        console.log(`Halo ${nama}`)
+                    }
+                    
+                    tampilPesan('Farhan')
+                </code>
+            </pre>
+        </p>
+    </div>
+    <div id="expression">
+        <h2>Function Expression</h2>
+        <p>cara pembuatan function ini adalah dengan mendeklarasikan variable, lalu variable itu diisi dengan function</p>
+        <p>cara pemanggilan function ini sama dengan cara pemanggilan <a href="#declaration">Function Declaration</a>, <b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const sampaikanSalam = function(nama, waktu) {
+                        console.log(`Halo ${nama}, selamat ${waktu}`)
+                    }
+                    sampaikanSalam('Farhan', 'pagi')
+                </code>
+            </pre>
+        </p>
+    </div>
+    <div id="arrow">
+        <h2>Arrow Function</h2>
+        <p>Arrow function adalah expression function yang lebih modern (ini adalah pendapat pribadi farhan)</p>
+        <p>Bisa juga dibilang ini adalah expression function yang lebih ringkas</p>
+        <p>cara pemanggilan function ini sama dengan cara pemanggilan <a href="#declaration">Function Declaration</a>, <b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const ucapkanSalam = (nama, waktu) => console.log(`Halo ${nama}, selamat ${waktu}`) ;
+                    ucapkanSalam('Haidar', 'pagi')
+                </code>
+            </pre>
+        </p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

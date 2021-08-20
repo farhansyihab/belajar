@@ -20,6 +20,7 @@
         <li>
             <h2 id="objliteral">Object Literal</h2>
             <p>Cara pembuatannya adalah membuat variable dan memasukkan langsung isi object kedalam variable tersebut</p>
+            <p>cara ini tidak efektif ketika ingin membuat banyak object, misalnya harus membuat Mahasiswa1, Mahasiswa2 dan seterusnya</p>
             <b>Contoh:</b>
             <pre>
                 <code>
@@ -121,6 +122,63 @@
                     const Sukainah = new Pelajar('Sukainah', 8, 10);
                     Sukainah.makan(22);
                     Sukainah.main(3);
+                </code>
+            </pre>
+        </li>
+        <li>
+            <h2 id="objcreate">Object Create</h2>
+            <p>Cara pembuatannya sama dengan Function Declaration, hanya saja, ketika membuat variable object didalam fungsi, menggunakan Object.create()</p>
+            <p>Cara ini lebih menghemat memori dibandingkan dengan constructor dan Function declaration jika pada setiap object ingin ditambahkan fungsi atau methode, tapi kurang praktis dibandingkan dengan teknik <b>Prototype</b></p>
+            <p>Menurut Sandika Galih cara ini mirip mirip dengan konsep inheritance(pewarisan) nya Java</p>
+            <b>Contoh:</b>
+            <pre>
+                <code>
+                    const methodeSiswi = {
+                        makan: function(porsi) {
+                            this.energi += porsi;
+                            console.log(`Halo ${this.nama}, energi Anda sekarang ${this.energi}`);
+                        },
+                        main: function(jam) {
+                            this.energi -= jam;
+                            console.log(`Halo ${this.nama}, energi Anda sekarang ${this.energi}`);
+                        },
+                        tidur: function(jam) {
+                            this.energi += jam * 2;
+                            console.log(`Halo ${this.nama}, energi Anda sekarang ${this.energi}`);
+                        }
+                    };
+                    
+                    function Siswi (nama, umur, energi) {
+                        let person = Object.create(methodeSiswi);
+                        person.nama = nama;
+                        person.umur = umur;
+                        person.energi = energi;
+                    
+                        return person;
+                    }
+                    
+                    const Zahra = Siswi('Zahra', 48, 12);
+                    Zahra.makan(22);
+                </code>
+            </pre>
+        </li>
+        <li>
+            <h2 id="proto">Prototype</h2>
+            <p>Gunakan teknik <a href="#class">Class</a> atau <a href="constructor">Constructor Function</a></p>
+            <p>Lalu tambahkan Object.prototype.namaFungsi</p>
+            <p>Cara ini selain lebih menghemat memori dibandingkan dengan constructor dan Function declaration biasa dan juga lebih praktis dibandingkan dengan cara Object.create()</p>
+            <b>Contoh:</b>
+            <pre>
+                <code>
+                    Manusia.prototype.begadang = function(jam) {
+                        this.energi -= (jam * 2);
+                        console.log(`Selamat belajar ${this.nama}, energi Anda sekarang ${this.energi}`);
+                    }
+                    
+                    Pelajar.prototype.belajar = function(jam) {
+                        this.energi -= (jam / 2);
+                        console.log(`Selamat belajar ${this.nama}, energi Anda sekarang ${this.energi}`);
+                    }
                 </code>
             </pre>
         </li>

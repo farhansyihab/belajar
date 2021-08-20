@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        code {
+            padding: 40px;
+            display:block;
+            background-color: #EFEFEF;
+        }
+    </style>
+    <title>Membuat Object</title>
+</head>
+<body>
+    <h1>Beberapa Cara Membuat Object</h1>
+    <p>Ada beberapa cara membuat object</p>
+    <ul>
+        <li>
+            <h2 id="objliteral">Object Literal</h2>
+            <p>Cara pembuatannya adalah membuat variable dan memasukkan langsung isi object kedalam variable tersebut</p>
+            <b>Contoh:</b>
+            <pre>
+                <code>
+                    const Mahasiswa = {
+                        nama: 'Farhan',
+                        Umur: 48,
+                        energi: 10,
+                        makan: function(porsi) {
+                            this.energi += porsi ;
+                            console.log(`Selamat makan ${this.nama}`)
+                        }
+                    }
+                </code>
+            </pre>
+        </li>
+        <li>
+            <h2 id="functdecl">Function Declaration</h2>
+            <p>Cara membuatnya adalah dengan membuat fungsi, didalam funsi ini dibuat object, ingat !! fungsi ini harus return object yang dibuat</p>
+            <b>Contoh:</b>
+            <pre>
+                <code>
+                    function Person (nama, umur, energi) {
+                        let person = {};
+                        person.nama = nama;
+                        person.umur = umur;
+                        person.energi = energi;
+                    
+                        person.makan = function (porsi) {
+                            this.energi += porsi;
+                            console.log(`Halo ${this.nama}, energi Anda sekarang ${this.energi}`)
+                        }
+                        return person;
+                    }
+                    
+                    const Farhan = Person('Farhan', 48, 12);
+                    Farhan.makan(22);
+                </code>
+            </pre>
+        </li>
+        <li>
+            <h2 id="functdecl">Constructor Function</h2>
+            <p>Cara membuatnya adalah dengan membuat fungsi, tidak usah deklarasikan variable berisi object, tidak usah return object</p>
+            <p>Panggil dengan menggunakan new NamaFungis</p>
+            <b>Contoh:</b>
+            <pre>
+                <code>
+                    function Manusia (nama, umur, energi) {
+                        this.nama = nama;
+                        this.umur = umur;
+                        this.energi = energi;
+                    
+                        this.makan = function (porsi) {
+                            this.energi += porsi;
+                            console.log(`Halo ${this.nama}, energi Anda sekarang ${this.energi}`)
+                        }
+                    
+                        this.main = function(jam) {
+                            this.energi -= jam;
+                            console.log(`Halo ${this.nama}, energi Anda sekarang ${this.energi}`)
+                        }
+                    }
+                    
+                    const Haidar = new Manusia('Haidar', 8, 12);
+                    Haidar.makan(22);
+                    Haidar.main(3);
+                </code>
+            </pre>
+        </li>
+    </ul>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -39,3 +39,15 @@ let selamatMalam = ucapkanSalam('malam');
 
 console.dir(selamatMalam);
 selamatPagi('Farhan');
+
+/**
+ * Higher Order Function
+ */
+const pengulangan = (mulai, n, aksi) => {
+    for (let i= mulai; i < n; i++) {
+        let hitung = mulai * i;
+        aksi(hitung)
+    }
+}
+
+pengulangan(2, 10, console.log)

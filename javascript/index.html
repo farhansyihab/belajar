@@ -90,11 +90,36 @@
         <ul>
             <li><a href="function/index.html#declaration">Declaration Function</a></li>
             <li><a href="function/index.html#expression">Function Expression</a></li>
-            <li><a href="function/index.html#constructor">Constructor Function</a></li>
-            <li><a href="function/index.html#class">Class</a></li>
-            <li><a href="function/index.html#objcreate">Object Create</a></li>
-            <li><a href="function/index.html#proto">Prototype</a></li>
+            <li><a href="function/index.html#arrow">Arrow Function</a></li>
         </ul>
+    </div>
+    <div id="higher">
+        <h2>Higher Order Function</h2>
+        <p><b>Higher Order Function</b> adalah function yang beroperasi pada function yang lain. Baik itu digunakan dalam argument, maupun sebagai return value </p>
+        <p>JavaScript memperlakukan function sebagai object</p>
+        <p>Contoh:</p>
+        <p>
+            <pre>
+                <code>
+                    const pengulangan = (mulai, n, aksi) => {
+                        for (let i= mulai; i < n; i++) {
+                            let hitung = mulai * i;
+                            aksi(hitung)
+                        }
+                    }
+                    
+                    pengulangan(2, 10, console.log)
+                </code>
+            </pre>
+        </p>
+        <p>Berikut ini beberapa contoh Higher Order Function</p>
+        <p>
+            <ul>
+                <li>Array.prototype.map()</li>
+                <li><a href="array/index.html#filter">Array.prototype.filter()</a></li>
+                <li>Array.prototype.reduce()</li>
+            </ul>
+        </p>
     </div>
     <script src="index.js"></script>
 </body>

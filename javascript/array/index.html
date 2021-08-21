@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Prototype</title>
+    <style>
+        .konten {
+            border-style: solid;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-color: black;
+            padding: 5px 20px 5px 20px;
+        }
+        .warnapink {
+            color: rgb(216, 3, 38);
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Prototype</h1>
+    <div id="menu">
+        <ul>
+            <li><a href="#concat">Concat</a></li>
+            <li><a href="#constructor">Constructor</a></li>
+            <li><a href="#copywithin">copyWithin</a></li>
+            <li><a href="#entries">Entries</a></li>
+            <li><a href="#every">Every</a></li>
+            <li><a href="#fill">Fill</a></li>
+            <li><a href="#filter">Filter</a></li>
+            <li><a href="#find">Find</a></li>
+        </ul>
+    </div>
+    <div id="concat" class="konten">
+        <h2>Concat</h2>
+        <p>Array Concat menggabungkan dua Array <b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const anakSD = ['Haidar', 'Sukainah', 'Zen'];
+                    const anakTK = ['Enab', 'Ali'];
+                    const semuaAnak = anakSD.concat(anakTK);
+                    document.getElementById('resultconcat').innerHTML = semuaAnak;
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultconcat
+            <div id="resultconcat"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="constructor" class="konten">
+        <h2>Constructor</h2>
+        <p>
+            The constructor property returns the function that created the Array prototype. <br>
+            For JavaScript arrays the constructor property returns:<br>
+            function Array() { [native code] }<br>
+            <br>
+            For JavaScript objects the constructor property returns:<br>
+            function Object() { [native code] }<br>
+            <b>contoh</b>
+        </p>
+        <p>
+            <pre>
+                <code>
+                    const listBuah = ['apel', 'ceri', 'duku', 'jambu', 'mangga'];
+                    const test = listBuah.constructor;
+                    document.getElementById('resultconstructor').innerHTML = test;
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultconstructor
+            <div id="resultconstructor"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="copywithin" class="konten">
+        <h2>CopyWithin</h2>
+        <p>copyWithin() adalah salah satu method JavaScript yang dapat kalian gunakan untuk menyalin elemen array ke posisi lain dalam array, dan menimpa nilai yang ada. Metode ini tidak menambahkan lebih banyak item ke array</p>
+        <p><code>array.copyWithin(target, start, end);</code></p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                    const hasilCopyWithin = buah.copyWithin(2, 0);
+                    document.getElementById('resultcopywithin').innerHTML = hasilCopyWithin;
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultcopywithin
+            <div id="resultcopywithin"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="entries" class="konten">
+        <h2>Entries</h2>
+        <p>
+            The entries() method returns an Array Iterator object with key/value pairs. <br>
+            For each item in the original array, the new iteration object will contain an array with the index as the key, and the item value as the value: <br> <br>
+
+            [0, "Banana"] <br>
+            [1, "Orange"] <br>
+            [2, "Apple"] <br>
+            [3, "Mango"] <br> <br>
+
+            entries() does not change the original array.
+        </p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                    const hasilentries = buah.entries();
+  
+                    for (let hasilAkhir of hasilentries) {
+                      document.getElementById("resultentries").innerHTML += hasilAkhir + "&lt;br&gt;";
+                    }
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultentries
+            <div id="resultentries"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="every" class="konten">
+        <h2>Every</h2>
+        <p>The <code class="warnapink">every()</code> method returns true if all elements in an array pass a 
+            test (provided as a function).</p>
+            <p>The method executes the function once for each element present in the 
+            array:</p>
+            <ul>
+              <li>If it finds an array element where the function returns a <em>false</em> value, every() returns false (and does not check the remaining values)</li>
+              <li>If no false occur, every() returns true</li>
+            </ul>
+            <p><code class="warnapink">every()</code> does not execute the function for empty array elements.</p>
+            <p><code class="warnapink">every()</code> does not change the original array</p>
+            <p> every() adalah salah satu method array JavaScript yang dapat kalian gunakan untuk memeriksa apakah semua elemen dalam array lulus tes yang disediakan didalam fungsi. Metode tersebut mengeksekusi fungsi satu kali untuk setiap elemen yang ada di dalam array. Jika menemukan elemen array di mana fungsi mengembalikan nilai false, maka method tersebut akan mengembalikan false dan tidak memeriksa nilai yang tersisa.</p>
+            <p>Begitupun sebaliknya, <b>jika tidak ada yang salah</b>, maka method tersebut akan mengembalikan true. Dan dari method tersebut tidak merubah array asli</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const bilangan = [3, 5, 7, 9, 20] ;
+                    const usia = [30, 34, 38, 40, 54];
+
+                    const cekBilangan = (angka) => angka > 2 //Cek apakah angka diatas 2
+                    const cekUsia = (umur) => umur > 32 ; //Cek apakah usia diatas 32
+                    
+                    const pengecekanBilangan = bilangan.every(cekBilangan); //Cek apakah semua bilangan diatas 2
+                    const pengecekanUsia = usia.every(cekUsia); //Cek apakah semua usia diatas 32
+
+                    const hasilEvery = `Apakah semua bilangan diatas 2 ? : ${pengecekanBilangan}, dan apakah semua usia diatas 32 ? :  ${pengecekanUsia}`;
+                    document.getElementById('resultevery').innerHTML = hasilEvery;
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultevery
+            <div id="resultevery"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="fill" class="konten">
+        <h2>Fill</h2>
+        <p>The <code class="warnapink">fill()</code> method fills specified elements in an array with a static value.</p>
+        <p>You can specify the position of where to start and end the filling. If not 
+        specified, all elements will be filled.</p>
+        <p>fill() overwrites the original array.</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                    const hasilFill = buah.fill("Kiwi",2,4);
+                    document.getElementById('resultfill').innerHTML = hasilFill;
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultfill
+            <div id="resultfill"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="filter" class="konten">
+        <h2>Filter</h2>
+        <p>Metode larik filter() membuat larik baru bersama elemen yang termasuk dalam kriteria yang ditentukan dari larik yang ada:</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohArrFilter = function () {
+                        const bilangan = [2, 4, 3, 5, 1, 9, 7, 8];
+                        return bilangan.filter(angka => angka > 4);
+                    }
+                    document.getElementById('resultfilter').innerHTML = contohArrFilter();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultfilter
+            <div id="resultfilter"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="find" class="konten">
+        <h2>Find</h2>
+        <p>Metode find() :</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohFind = function() {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                        const buahDicari = 'kedongdong'
+                        const cariBuah = buah.find((fruit) => fruit === buahDicari);
+                        return `Ternyata buah ${buahDicari} ${cariBuah ? 'ada': 'tak ada'} pada list array`;
+                    }
+                    document.getElementById('resultfind').innerHTML = contohFind();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultfind
+            <div id="resultfind"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

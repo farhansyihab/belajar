@@ -69,3 +69,59 @@ const contohFind = function() {
     return `Ternyata buah ${buahDicari} ${cariBuah ? 'ada': 'tak ada'} pada list array`;
 }
 document.getElementById('resultfind').innerHTML = contohFind();
+
+/**
+ * contoh array.findIndex()
+ */
+const contohFindIndex = function() {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+  const buahDicari = 'jambu'
+  const cariBuah = buah.findIndex((fruit) => fruit === buahDicari);
+  return `Ternyata buah ${buahDicari} ${cariBuah>0 ? 'ada': 'tak ada'} pada list array, pada index ke: ${cariBuah}`;
+}
+document.getElementById('resultfindindex').innerHTML = contohFindIndex();
+
+
+/**
+ * contoh forEach()
+ */
+const contohforeach = function() {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+  let elemenli = ''
+  const buatElement = buah.forEach((fruit, index) => {
+      elemenli += `<li>index ke:${index}: ${fruit}</li>`
+  });
+  return `<ol>${elemenli}</ol>`;
+}
+document.getElementById('resultforeach').innerHTML = contohforeach();
+
+/**
+ * contoh from()
+ */
+const contohfrom = function() {
+  return Array.from(arguments);
+}
+const arrayBuah = contohfrom('apel','bangkoang','ceri','duku','jambu','kedongdong','mangga','nanas');
+document.getElementById('resultfrom').innerHTML = arrayBuah;
+
+/**
+ * contoh includes()
+ */
+const contohIncludes = function() {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+  const namaBuah = 'ceri';
+  const cekBuah = buah.includes(namaBuah); // --> cek apakah ada ceri termasuk dalam array buah ?
+  return `Ternyata ${namaBuah} ${cekBuah ? 'ada' : 'tak ada'} dalam array`
+}
+document.getElementById('resultincludes').innerHTML = contohIncludes();
+
+/**
+ * contoh indexOf()
+ */
+const contohindexof = function() {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+  const namaBuah = 'ceri';
+  const cekBuah = buah.indexOf(namaBuah); // --> cek apakah ada ceri termasuk dalam array buah ?
+  return `Ternyata ${namaBuah} ${cekBuah>=0 ? 'ada dalam array dan ada pada index-ke'+cekBuah : 'tak ada dalam array'} `
+}
+document.getElementById('resultindexof').innerHTML = contohindexof();

@@ -30,6 +30,11 @@
             <li><a href="#fill">Fill</a></li>
             <li><a href="#filter">Filter</a></li>
             <li><a href="#find">Find</a></li>
+            <li><a href="#findindex">FindIndex</a></li>
+            <li><a href="#foreach">ForEach</a></li>
+            <li><a href="#from">From</a></li>
+            <li><a href="#includes">Includes</a></li>
+            <li><a href="#indexof">IndexOf</a></li>
         </ul>
     </div>
     <div id="concat" class="konten">
@@ -222,6 +227,116 @@
         </p>
         <p>hasilnya: ada di dalam div dengan id resultfind
             <div id="resultfind"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="findindex" class="konten">
+        <h2>FindIndex</h2>
+        <p>Metode findindex() sama dengan method find(), bedanya method findIndex resultnya bukan boolean tapi nomor index:</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohFindIndex = function() {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                        const buahDicari = 'jambu'
+                        const cariBuah = buah.findIndex((fruit) => fruit === buahDicari);
+                        return `Ternyata buah ${buahDicari} ${cariBuah ? 'ada': 'tak ada'} pada list array`;
+                    }
+                    document.getElementById('resultfindindex').innerHTML = contohFindIndex();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultfindindex
+            <div id="resultfindindex"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="foreach" class="konten">
+        <h2>Foreach</h2>
+        <p>Metode foreach() kegunaannya untuk melakukan iterasi pada array Javascript</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohforeach = function() {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                        let elemenli = ''
+                        const buatElement = buah.forEach((fruit, index) => {
+                            elemenli += `&lt;li&gt;index ke:${index}: ${fruit}&lt;/li&gt;`
+                        });
+                        return `&lt;ol&gt;${elemenli}&lt;/ol&gt;`;
+                    }
+                    document.getElementById('resultforeach').innerHTML = contohforeach();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultforeach
+            <div id="resultforeach"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="from" class="konten">
+        <h2>From</h2>
+        <p>Metode from() kegunaannya untuk membuat array dari string</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohfrom = function() {
+                        return Array.from(arguments);
+                    }
+                    const arrayBuah = contohfrom('apel','bangkoang','ceri','duku','jambu','kedongdong','mangga','nanas');
+                    document.getElementById('resultfrom').innerHTML = arrayBuah;
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultfrom
+            <div id="resultfrom"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="includes" class="konten">
+        <h2>Includes</h2>
+        <p>Metode includes() kegunaannya untuk mengecek array, apakah didalamnya ada suatu value, nilai kembaliannya adalah true atau false</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohIncludes = function() {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                        const namaBuah = 'ceri';
+                        const cekBuah = buah.includes(namaBuah); // --> cek apakah ada ceri termasuk dalam array buah ?
+                        return `Ternyata ${namaBuah} ${cekBuah ? 'ada' : 'tak ada'} dalam array`
+                    }
+                    document.getElementById('resultincludes').innerHTML = contohIncludes();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultincludes
+            <div id="resultincludes"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="indexof" class="konten">
+        <h2>IndexOf</h2>
+        <p>Metode includes() kegunaannya untuk mengecek array, apakah didalamnya ada suatu value, nilai kembaliannya adalah true atau false</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohindexof = function() {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                        const namaBuah = 'ceri';
+                        const cekBuah = buah.indexOf(namaBuah); // --> cek apakah ada ceri termasuk dalam array buah ?
+                        return `Ternyata ${namaBuah} ${cekBuah>=0 ? 'ada dalam array dan ada pada index-ke'+cekBuah : 'tak ada dalam array'} `
+                    }
+                    document.getElementById('resultindexof').innerHTML = contohindexof();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultindexof
+            <div id="resultindexof"></div>
         </p>
         <p><a href="#menu">Menu Atas</a></p>
     </div>

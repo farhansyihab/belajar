@@ -35,8 +35,14 @@
             <li><a href="#from">From</a></li>
             <li><a href="#includes">Includes</a></li>
             <li><a href="#indexof">IndexOf</a></li>
+            <li><a href="#isarray">IsArray</a></li>
+            <li><a href="#join">Join</a></li>
+            <li><a href="#keys">Keys</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#reduce">Reduce</a></li>
         </ul>
     </div>
+    <div>Untuk selengkapnya silahkan lihat di: <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp">W3School</a></div>
     <div id="concat" class="konten">
         <h2>Concat</h2>
         <p>Array Concat menggabungkan dua Array <b>Contoh:</b></p>
@@ -337,6 +343,136 @@
         </p>
         <p>hasilnya: ada di dalam div dengan id resultindexof
             <div id="resultindexof"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="isarray" class="konten">
+        <h2>IsArray</h2>
+        <p>Metode isArray() kegunaannya untuk mengecek apakah sebuah variable berisi array atau bukan. Return true or false</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohisarray = () => {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                        const cekBuah = Array.isArray(buah); // --> cek apakah variable buah berisi array ?
+                        return `Ternyata variable 'buah' ${cekBuah ? 'adalah array' : 'bukan array'} `
+                    }
+                    document.getElementById('resultisarray').innerHTML = contohisarray();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultisarray
+            <div id="resultisarray"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="join" class="konten">
+        <h2>Join</h2>
+        <p>Metode join() kegunaannya untuk meng-convert element didalam array menjadi string</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohjoin = () => {
+                        const arrBuah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                        const strBuah = arrBuah.join(); // --> Return  'apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas'
+                        return strBuah
+                    }
+                    document.getElementById('resultjoin').innerHTML = contohjoin();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultjoin
+            <div id="resultjoin"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="keys" class="konten">
+        <h2>Keys</h2>
+        <p>Method keys() mengembalikan sebuah Array Iterator menjadi sebuah object dengan keys didalam array (object berisi array, array-nya berisi keys)<br>Method keys tidak merubah array yang asli</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohkeys = () => {
+                        const arrBuah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+                        const keysBuah = arrBuah.keys();
+                        let indexBuah = [];
+                        for (const k of keysBuah) {
+                          indexBuah.push(k);
+                        }
+                        return indexBuah.join();
+                      }
+                      document.getElementById('resultkeys').innerHTML = contohkeys();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultkeys
+            <div id="resultkeys"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="map" class="konten">
+        <h2>Map</h2>
+        <p>The map() method creates a new array with the results of calling a function for every array element.</p>
+        <p>The map() method calls the provided function once for each element in an array, in order.</p>
+        <p>map() does not execute the function for empty elements.</p>
+        <p>map() does not change the original array.</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohmap = () => {
+                        const arrBuah = [{
+                                asal: 'local',
+                                buah:['bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas', 'rambutan']
+                            },{
+                                asal: 'luar',
+                                buah:['apel', 'anggur', 'kurma']
+                            }];
+                            const mapBuah = arrBuah.filter(item => item.asal === 'local').map((item) => item.buah);
+                        return mapBuah
+                      }
+                      document.getElementById('resultmap').innerHTML = contohmap();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultmap
+            <div id="resultmap"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="reduce" class="konten">
+        <h2>Reduce</h2>
+        <p>The reduce() method executes a reducer function for each value of an array.</p>
+        <p>reduce() returns a single value which is the function's accumulated result.</p>
+        <p>reduce() does not execute the function for empty array elements.</p>
+        <p>reduce() does not change the original array.</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohreduce = () => {
+                        const arrBuah = [{
+                                asal: 'local',
+                                buah:['bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas', 'rambutan']
+                            },{
+                                asal: 'luar',
+                                buah:['apel', 'anggur', 'kurma']
+                            }];
+                            const mapReduce = arrBuah.map((item) => item.buah).reduce((accumulator, value) => [...accumulator, ...value])
+                        return mapReduce
+                      }
+                      let elemenli = ''
+                      const arrayFruits = contohreduce();
+                      const buatElement = arrayFruits.forEach((fruit, index) => elemenli += `&lt;li&gt;index ke:${index}: ${fruit}&lt;/li&gt;`);
+                      document.getElementById('resultreduce').innerHTML = `&lt;ol&gt;${elemenli}&lt;/ol&gt;`;
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultreduce
+            <div id="resultreduce"></div>
         </p>
         <p><a href="#menu">Menu Atas</a></p>
     </div>

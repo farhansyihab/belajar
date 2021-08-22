@@ -125,3 +125,73 @@ const contohindexof = function() {
   return `Ternyata ${namaBuah} ${cekBuah>=0 ? 'ada dalam array dan ada pada index-ke'+cekBuah : 'tak ada dalam array'} `
 }
 document.getElementById('resultindexof').innerHTML = contohindexof();
+
+/**
+ * contoh isArray()
+ */
+ const contohisarray= function() {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+  const cekBuah = Array.isArray(buah); // --> cek apakah variable buah berisi array ?
+  return `Ternyata variable 'buah' ${cekBuah ? 'adalah array' : 'bukan array'} `
+}
+document.getElementById('resultisarray').innerHTML = contohisarray();
+
+/**
+ * contoh join()
+ */
+const contohjoin = () => {
+  const arrBuah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+  const strBuah = arrBuah.join(); // --> Return  'apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas'
+  return strBuah
+}
+document.getElementById('resultjoin').innerHTML = contohjoin();
+
+/**
+ * contoh keys()
+ */
+const contohkeys = () => {
+  const arrBuah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas' ];
+  const keysBuah = arrBuah.keys();
+  let indexBuah = [];
+  for (const k of keysBuah) {
+    indexBuah.push(k);
+  }
+  return indexBuah.join();
+}
+document.getElementById('resultkeys').innerHTML = contohkeys();
+
+/**
+ * contoh map()
+ */
+const contohmap = () => {
+  const arrBuah = [{
+          asal: 'local',
+          buah:['bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas', 'rambutan']
+      },{
+          asal: 'luar',
+          buah:['apel', 'anggur', 'kurma']
+      }];
+  const mapBuah = arrBuah.filter(item => item.asal === 'local').map((item) => item.buah);
+  console.dir(mapBuah)
+  return mapBuah
+}
+document.getElementById('resultmap').innerHTML = contohmap();
+
+/**
+ * contoh reduce()
+ */
+const contohreduce = () => {
+  const arrBuah = [{
+          asal: 'local',
+          buah:['bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'nanas', 'rambutan']
+      },{
+          asal: 'luar',
+          buah:['apel', 'anggur', 'kurma']
+      }];
+      const mapReduce = arrBuah.map((item) => item.buah).reduce((accumulator, value) => [...accumulator, ...value])
+  return mapReduce
+}
+let elemenli = ''
+const arrayFruits = contohreduce();
+const buatElement = arrayFruits.forEach((fruit, index) => elemenli += `<li>index ke:${index}: ${fruit}</li>`);
+document.getElementById('resultreduce').innerHTML = `<ol>${elemenli}</ol>`;

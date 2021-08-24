@@ -38,8 +38,11 @@
             <li><a href="#isarray">IsArray</a></li>
             <li><a href="#join">Join</a></li>
             <li><a href="#keys">Keys</a></li>
+            <li><a href="#lastindexof">lastIndexOf</a></li>
             <li><a href="#map">Map</a></li>
             <li><a href="#reduce">Reduce</a></li>
+            <li><a href="#pop">Pop</a></li>
+            <li><a href="#protorype">Prototype</a></li>
         </ul>
     </div>
     <div>Untuk selengkapnya silahkan lihat di: <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp">W3School</a></div>
@@ -473,6 +476,105 @@
         </p>
         <p>hasilnya: ada di dalam div dengan id resultreduce
             <div id="resultreduce"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="lastindexof" class="konten">
+        <h2>lastIndexOf</h2>
+        <p>Metode lastIndexOf() kegunaannya, jika pada array ada 2 yang sama, maka yang diambil adalah index yang terkahir </p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohlastindexof = () => {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'apel', 'nanas' ];
+                        const indexyangDicari = 'apel'
+                        const cekBuah = buah.lastIndexOf(indexyangDicari); // --> ambil 'apel' yang terakhir, dapatkan index array-nya
+                        return `Ternyata buah ${indexyangDicari} ${cekBuah >= 0 ? 'ada didalam array pada index-ke'+ cekBuah : 'tidak ada dalam array'} `
+                    }
+                    document.getElementById('resultlastindexof').innerHTML = contohlastindexof();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultlastindexof
+            <div id="resultlastindexof"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="pop" class="konten">
+        <h2>Pop</h2>
+        <p>Metode pop() kegunaannya menghapus element terkahir dari sebuah array </p>
+        <p>Metode pop() mengembalikan nilai element yang dihapus</p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohpop = () => {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'apel', 'nanas' ];
+                        const hapusBuah = buah.pop(); // --> menghapus nanas karena nanas adalah element terhakhir
+                        return `${hapusBuah ? hapusBuah + ' telah dihapus dari array'  : 'gagal hapus element dalam array'} `
+                    }
+                    document.getElementById('resultpop').innerHTML = contohpop();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultpop
+            <div id="resultpop"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="prototype" class="konten">
+        <h2>Prototype</h2>
+        <p>Metode prototype() kegunaannya menambahkan fungsi baru kedalam global array </p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    Array.prototype.myUcase = function() {
+                        for (let i = 0; i < this.length; i++) {
+                          this[i] = this[i].toUpperCase();
+                        }
+                      };
+                    const contohprototype = () => {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'apel', 'nanas' ];
+                        buah.myUcase();
+                        let elemenli = ''
+                        const buatElement = buah.forEach((fruit, index) => {
+                            elemenli += `&lt;li&gt;index ke:${index}: ${fruit}&lt;/li&gt;`
+                        });
+                        return `&lt;ol&gt;${elemenli}&lt;/ol&gt;`;
+                    }
+                    document.getElementById('resultprototype').innerHTML = contohprototype();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultprototype
+            <div id="resultprototype"></div>
+        </p>
+        <p><a href="#menu">Menu Atas</a></p>
+    </div>
+    <div id="push" class="konten">
+        <h2>Push</h2>
+        <p>Metode push() kegunaannya menambahkan element baru ke dalam array </p>
+        <p><b>Contoh:</b></p>
+        <p>
+            <pre>
+                <code>
+                    const contohpush = () => {
+                        const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'apel', 'nanas' ];
+                        buah.push('kiwi', 'rambutan', 'pisang'); // --> menambahkan 'kiwi', 'rambutan', 'pisang' kedalam array buah
+                        let elemenli = ''
+                        const buatElement = buah.forEach((fruit, index) => {
+                            elemenli += `&lt;li&gt;index ke:${index}: ${fruit}&lt;/li&gt;`
+                        });
+                        return `&lt;ol&gt;${elemenli}&lt;/ol&gt;`;
+                    }
+                    document.getElementById('resultpush').innerHTML = contohpush();
+                </code>
+            </pre>
+        </p>
+        <p>hasilnya: ada di dalam div dengan id resultpush
+            <div id="resultpush"></div>
         </p>
         <p><a href="#menu">Menu Atas</a></p>
     </div>

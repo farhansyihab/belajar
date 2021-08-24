@@ -195,3 +195,56 @@ let elemenli = ''
 const arrayFruits = contohreduce();
 const buatElement = arrayFruits.forEach((fruit, index) => elemenli += `<li>index ke:${index}: ${fruit}</li>`);
 document.getElementById('resultreduce').innerHTML = `<ol>${elemenli}</ol>`;
+
+/**
+ * contoh lastIndexOf()
+ */
+const contohlastindexof = () => {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'apel', 'nanas' ];
+  const indexyangDicari = 'apel'
+  const cekBuah = buah.lastIndexOf(indexyangDicari); // --> ambil 'apel' yang terakhir, dapatkan index array-nya
+  return `Ternyata buah ${indexyangDicari} ${cekBuah >= 0 ? 'ada didalam array pada index-ke'+ cekBuah : 'tidak ada dalam array'} `
+}
+document.getElementById('resultlastindexof').innerHTML = contohlastindexof();
+
+/**
+ * contoh pop()
+ */
+const contohpop = () => {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'apel', 'nanas' ];
+  const hapusBuah = buah.pop(); // --> menghapus nanas karena nanas adalah element terhakhir
+  return `${hapusBuah ? hapusBuah + ' telah dihapus dari array'  : 'gagal hapus element dalam array'} `
+}
+document.getElementById('resultpop').innerHTML = contohpop();
+
+/**
+ * contoh array prototype
+ */
+Array.prototype.myUcase = function() {
+  for (let i = 0; i < this.length; i++) {
+    this[i] = this[i].toUpperCase();
+  }
+};
+const contohprototype = () => {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'apel', 'nanas' ];
+  buah.myUcase();
+  let elemenli = ''
+  const buatElement = buah.forEach((fruit, index) => {
+      elemenli += `<li>index ke:${index}: ${fruit}</li>`
+  });
+  return `<ol>${elemenli}</ol>`;
+}
+document.getElementById('resultprototype').innerHTML = contohprototype();
+
+
+
+const contohpush = () => {
+  const buah = ['apel', 'bangkoang', 'ceri', 'duku', 'jambu', 'kedongdong', 'mangga', 'apel', 'nanas' ];
+  buah.push('kiwi', 'rambutan', 'pisang'); // --> menambahkan 'kiwi', 'rambutan', 'pisang' kedalam array buah
+  let elemenli = ''
+  const buatElement = buah.forEach((fruit, index) => {
+      elemenli += `<li>index ke:${index}: ${fruit}</li>`
+  });
+  return `<ol>${elemenli}</ol>`;
+}
+document.getElementById('resultpush').innerHTML = contohpush();
